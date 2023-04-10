@@ -3,6 +3,8 @@ const loadData = (searchText) =>{
     fetch(url)
     .then(res => res.json())
     .then(data =>displayData(data.data))
+    
+
 }
 const displayData = mobiles =>{
     
@@ -13,7 +15,7 @@ const displayData = mobiles =>{
         creatDiv.classList.add('col')
         creatDiv.innerHTML = `
         <div  class ="card">
-        <img src="${mobile.image}" alt="">
+        <img src="${mobile.image}"  alt="">
         <div class ="card-body">
         <h3 class ="card-title"> name: ${mobile.phone_name}</h3>
         <button  onClick="loadPhnDetail('${mobile.slug}')" class ="btn btn-primary">show detail</button>
@@ -21,6 +23,7 @@ const displayData = mobiles =>{
         </div>
         `
         phnContainer.appendChild(creatDiv)
+        
     })
 
 }
@@ -47,16 +50,20 @@ const displayPhnDetail = phn =>{
     const detailContainer = document.getElementById('details-container')
     detailContainer.innerHTML = ''
     const creatDiv = document.createElement('div')
+    creatDiv.classList.add('col')
     creatDiv.innerHTML =`
     <div class ="card">
-        <img src="${phn.image}" alt="">
-        <div class ="card-body">
-        <h3 class ="card-title"> name: ${phn.phone_name}</h3>
-        <a href='#' > gooo </a>
-        <button class ="btn btn-primary">search detail</button>
-        </div>
-        </div>
-
+    <div class ="card-body">
+    <div class="modal-dialog modal-dialog-scrollable">
+    <h3>storage: ${phn.mainFeatures.storage}</h3>
+    <h3>display: ${phn.mainFeatures.displaySize}</h3>
+    <h3>memory: ${phn.mainFeatures.memory}</h3>
+    <h3> sensore: ${phn.mainFeatures.sensors[0]} 
+    
+    </div>
+   </div>
+   </div>
+    
     `
     detailContainer.appendChild(creatDiv)
 

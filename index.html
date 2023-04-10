@@ -3,38 +3,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>mobile_Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-
- <main>
-    
-    <section class="text-center mt-3 ">
-        <h2 class="text-center" > watch mobile demo </h2>
-        <div class="d-flex align-items-center justify-content-center " >
-            <div id="details-container" style="width: 25rem; "  >
-
+     <header>
+        <h1 class="text-center" >Welcome To My Mobile Shope</h1>
+     </header>
+     <div class="container">
+        <section>
+            <div class="mt-5 w-50 mx-auto text-center">
+                <input   type="text" placeholder="search your Phone" name="" id="search-field" >
+                <button id="search-btn" class="btn btn-primary" >Search</button>
             </div>
-        </div>
-    </section>
-    <section class="  d-flex justify-content-center align-items-center " style="height:220px"    >
-        <div class=" d-flex "   >
-            <input type="text" class="form-control" placeholder="search your food" id="phn-field" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="searchPhn()">Search</button>
-          </div>
-    </section>
-    <section class="container">
-        <div id="phn-container" class="row row-col-1 row-cols-md-3 g-4">
+        </section>
 
-        </div>
-    </section>
+        <!-- display serch reasult -->
 
-   </main>
+        <section>
+            <!-- // show  phone data -->
+            <div id="mobile-container"  class="row row-cols-1 row-cols-md-3 g-3 py-5 " >
+
+         
+            </div>
+              <!-- load all data -->
+            <div id="show-all" class="d-none text-center">
+              <button id="btn-all" class="btn btn-primary">show all</button>
+            </div>
+
+              <!-- no  found message  -->
+            <div id="no-found-message" class="d-none" >
+                <h3 class="text-warning  text-center " >No Phone Found , Please Try New Search  </h3>
+            </div>
+            <!-- SPINNER -->
+            <section id="spinner"  class="d-none" >
+              <div style="height: 500px;" class="d-flex justify-content-center align-items-center" >
+                <div  class="spinner-border"   role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </section>
+              
+        </section>
+
+        <!-- Modal -->
+        <section>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="phone-details" class="modal-body">
+                     
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+     </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <script src="js/app.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
